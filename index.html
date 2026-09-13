@@ -98,11 +98,31 @@
       margin-bottom: 15px;
     }
 
+    /* 小標題 */
+
     h2 {
+      display: inline-block;
       font-size: clamp(26px, 3vw, 42px);
       letter-spacing: -1px;
       margin-bottom: 40px;
-      white-space: nowrap;
+      color: var(--text);
+      position: relative;
+      z-index: 1;
+    }
+
+    /* 螢光筆畫重點效果 */
+
+    h2::after {
+      content: "";
+      position: absolute;
+      left: -6px;
+      right: -6px;
+      bottom: 4px;
+      height: 10px;
+      background: var(--accent);
+      opacity: 0.75;
+      z-index: -1;
+      transform: rotate(-1deg);
     }
 
     /* HERO */
@@ -143,10 +163,12 @@
       margin-bottom: 28px;
     }
 
+    /* I BUILD THINGS */
+
     h1 {
-      font-size: clamp(55px, 9vw, 125px);
+      font-size: clamp(48px, 7vw, 90px);
       line-height: 0.95;
-      letter-spacing: -6px;
+      letter-spacing: -5px;
       margin-bottom: 30px;
     }
 
@@ -156,7 +178,7 @@
 
     .hero-description {
       color: var(--muted);
-      font-size: 19px;
+      font-size: 18px;
       max-width: 620px;
       margin-bottom: 40px;
     }
@@ -334,6 +356,7 @@
       }
 
       h1 {
+        font-size: 52px;
         letter-spacing: -3px;
       }
 
@@ -570,8 +593,6 @@
 
   </section>
 
-
-  <!-- FOOTER -->
 
   <footer>
     <div>© 2026 林綺洛</div>
