@@ -57,7 +57,550 @@
       align-items: center;
       background: rgba(10, 10, 10, 0.8);
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid r
-```
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
 
-    
+    .logo {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    nav ul {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    /* GENERAL */
+
+    section {
+      padding: 120px 8%;
+      max-width: 1300px;
+      margin: auto;
+      text-align: left;
+    }
+
+    .section-label {
+      color: var(--accent);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+    }
+
+    /* SECTION TITLES */
+
+    h2 {
+      font-size: clamp(26px, 3vw, 42px);
+      letter-spacing: -1px;
+      margin-bottom: 40px;
+      color: var(--text);
+      white-space: nowrap;
+    }
+
+    h2 .highlight {
+      color: var(--accent);
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: var(--accent);
+      filter: blur(160px);
+      opacity: 0.08;
+      right: -150px;
+      top: 100px;
+    }
+
+    .hero-content {
+      max-width: 850px;
+      position: relative;
+      z-index: 2;
+      text-align: left;
+    }
+
+    .tag {
+      display: inline-block;
+      color: var(--accent);
+      border: 1px solid rgba(250,242,157,0.3);
+      padding: 7px 14px;
+      border-radius: 100px;
+      font-size: 13px;
+      margin-bottom: 28px;
+    }
+
+    /* HERO TITLE */
+
+    h1 {
+      font-size: clamp(42px, 6vw, 70px);
+      line-height: 1;
+      letter-spacing: -3px;
+      margin-bottom: 25px;
+    }
+
+    h1 span {
+      color: var(--accent);
+    }
+
+    .hero-description {
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 620px;
+      margin-bottom: 40px;
+    }
+
+    /* BUTTONS */
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 13px 22px;
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      font-size: 14px;
+      transition: 0.2s;
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      color: #000;
+      border-color: var(--accent);
+      font-weight: 700;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      max-width: 750px;
+    }
+
+    .about-text {
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .about-text p {
+      margin-bottom: 20px;
+    }
+
+    /* PROJECTS */
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .project {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: 0.3s;
+    }
+
+    .project:hover {
+      transform: translateY(-6px);
+      border-color: #444;
+    }
+
+    .project-image {
+      height: 220px;
+      background: linear-gradient(135deg, #222, #101010);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 70px;
+      position: relative;
+    }
+
+    .project-image::after {
+      content: "PROJECT";
+      position: absolute;
+      bottom: 18px;
+      left: 20px;
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: var(--accent);
+    }
+
+    .project-info {
+      padding: 22px;
+    }
+
+    .project-info h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .project-info p {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    .project-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .project-tags span {
+      border: 1px solid var(--border);
+      padding: 5px 10px;
+      border-radius: 100px;
+      font-size: 11px;
+      color: #bbb;
+    }
+
+    /* SKILLS */
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skill {
+      border: 1px solid var(--border);
+      padding: 12px 18px;
+      border-radius: 100px;
+      color: #ccc;
+      transition: 0.2s;
+    }
+
+    .skill:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* CONTACT */
+
+    .contact {
+      text-align: left;
+      padding-bottom: 80px;
+    }
+
+    .contact h2 {
+      max-width: 850px;
+      margin: 0 0 30px;
+    }
+
+    .contact p {
+      color: var(--muted);
+      margin-bottom: 30px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 30px 8%;
+      color: #666;
+      font-size: 13px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 700px) {
+
+      nav ul {
+        display: none;
+      }
+
+      section {
+        padding: 90px 6%;
+      }
+
+      h1 {
+        font-size: 52px;
+        letter-spacing: -3px;
+      }
+
+      h2 {
+        white-space: normal;
+      }
+
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-description {
+        font-size: 16px;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <nav>
+    <div class="logo">LIN<span>.</span>QILUO</div>
+
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="tag">FIRST-YEAR STUDENT</div>
+
+      <h1>
+        I BUILD<br>
+        <span>THINGS.</span>
+      </h1>
+
+      <p class="hero-description">
+        我是林綺洛，正在探索設計、科技與創意。
+        喜歡把想法變成真正的作品。
+      </p>
+
+      <div class="buttons">
+        <a class="btn primary" href="#projects">
+          查看作品 →
+        </a>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <div class="section-label">01 — About</div>
+
+    <h2>About <span class="highlight">Me.</span></h2>
+
+    <div class="about-grid">
+
+      <div class="about-text">
+
+        <p>
+          嗨，我是林綺洛，就讀於台北市立大學
+          學習與媒材設計學系。
+        </p>
+
+        <p>
+          我目前正在學習網頁開發、UI/UX 設計與程式設計，
+          同時也喜歡攝影、影像、音樂與 AI。
+        </p>
+
+        <p>
+          這個網站記錄我從大一開始的學習歷程與作品。
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROJECTS -->
+
+  <section id="projects">
+
+    <div class="section-label">02 — Selected Work</div>
+
+    <h2>Things I've <span class="highlight">Made.</span></h2>
+
+    <div class="projects">
+
+      <article class="project">
+
+        <div class="project-image">✦</div>
+
+        <div class="project-info">
+
+          <h3>Project One</h3>
+
+          <p>
+            這是一個我正在製作的專案，
+            在這裡介紹問題、解決方式以及最後的成果。
+          </p>
+
+          <div class="project-tags">
+            <span>UI/UX</span>
+            <span>Web</span>
+            <span>Design</span>
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <article class="project">
+
+        <div class="project-image">◈</div>
+
+        <div class="project-info">
+
+          <h3>Project Two</h3>
+
+          <p>
+            一個用來展示我的創意、設計思考或程式能力的作品。
+          </p>
+
+          <div class="project-tags">
+            <span>JavaScript</span>
+            <span>Creative</span>
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <article class="project">
+
+        <div class="project-image">●</div>
+
+        <div class="project-info">
+
+          <h3>Project Three</h3>
+
+          <p>
+            未來可以放課堂專案、Side Project、
+            比賽作品或其他作品。
+          </p>
+
+          <div class="project-tags">
+            <span>Research</span>
+            <span>Development</span>
+          </div>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- SKILLS -->
+
+  <section id="skills">
+
+    <div class="section-label">03 — Skills</div>
+
+    <h2>What I'm <span class="highlight">Learning.</span></h2>
+
+    <div class="skills">
+
+      <div class="skill">HTML</div>
+      <div class="skill">CSS</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">Python</div>
+      <div class="skill">UI/UX</div>
+      <div class="skill">Figma</div>
+      <div class="skill">Git</div>
+      <div class="skill">GitHub</div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section id="contact" class="contact">
+
+    <div class="section-label">04 — Contact</div>
+
+    <h2>Let's <span class="highlight">Talk.</span></h2>
+
+    <p>
+      想了解我的作品或與我交流，歡迎聯絡我。
+    </p>
+
+    <div class="buttons">
+
+      <a class="btn primary" href="mailto:your.email@example.com">
+        Email Me →
+      </a>
+
+      <a class="btn" href="https://github.com/" target="_blank">
+        GitHub
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+    <div>© 2026 林綺洛</div>
+    <div>Built with curiosity.</div>
+  </footer>
+
+
+  <script>
+
+    document.body.style.opacity = "0";
+
+    window.addEventListener("load", () => {
+      document.body.style.transition = "opacity 0.8s ease";
+      document.body.style.opacity = "1";
+    });
+
+  </script>
+
+</body>
+</html>
+```
