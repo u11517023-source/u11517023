@@ -1,10 +1,11 @@
+```html
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>大一上作品集網站</title>
+  <title>林綺洛｜大一上作品集</title>
 
   <style>
     :root {
@@ -43,6 +44,8 @@
       text-decoration: none;
     }
 
+    /* NAV */
+
     nav {
       position: fixed;
       top: 0;
@@ -52,7 +55,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: rgba(10, 10, 10, 0.75);
+      background: rgba(10, 10, 10, 0.8);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(255,255,255,0.05);
     }
@@ -79,10 +82,27 @@
       color: var(--accent);
     }
 
+    /* GENERAL */
+
     section {
       padding: 120px 8%;
       max-width: 1300px;
       margin: auto;
+    }
+
+    .section-label {
+      color: var(--accent);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      font-size: clamp(26px, 3vw, 42px);
+      letter-spacing: -1px;
+      margin-bottom: 40px;
+      white-space: nowrap;
     }
 
     /* HERO */
@@ -116,7 +136,7 @@
     .tag {
       display: inline-block;
       color: var(--accent);
-      border: 1px solid rgba(183,255,60,0.3);
+      border: 1px solid rgba(250,242,157,0.3);
       padding: 7px 14px;
       border-radius: 100px;
       font-size: 13px;
@@ -140,6 +160,8 @@
       max-width: 620px;
       margin-bottom: 40px;
     }
+
+    /* BUTTON */
 
     .buttons {
       display: flex;
@@ -166,29 +188,10 @@
       transform: translateY(-3px);
     }
 
-    /* GENERAL */
-
-    .section-label {
-      color: var(--accent);
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 15px;
-    }
-
-    h2 {
-  font-size: clamp(32px, 4vw, 50px);
-  letter-spacing: -2px;
-  margin-bottom: 40px;
-  white-space: nowrap;
-}
-
     /* ABOUT */
 
     .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 70px;
+      max-width: 750px;
     }
 
     .about-text {
@@ -198,30 +201,6 @@
 
     .about-text p {
       margin-bottom: 20px;
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 15px;
-    }
-
-    .stat {
-      background: var(--card);
-      border: 1px solid var(--border);
-      padding: 28px;
-      border-radius: 18px;
-    }
-
-    .stat-number {
-      font-size: 40px;
-      font-weight: 800;
-      color: var(--accent);
-    }
-
-    .stat-name {
-      color: var(--muted);
-      font-size: 14px;
     }
 
     /* PROJECTS */
@@ -246,9 +225,8 @@
     }
 
     .project-image {
-      height: 280px;
-      background:
-        linear-gradient(135deg, #222, #101010);
+      height: 220px;
+      background: linear-gradient(135deg, #222, #101010);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -267,11 +245,11 @@
     }
 
     .project-info {
-      padding: 28px;
+      padding: 22px;
     }
 
     .project-info h3 {
-      font-size: 25px;
+      font-size: 22px;
       margin-bottom: 10px;
     }
 
@@ -305,7 +283,7 @@
 
     .skill {
       border: 1px solid var(--border);
-      padding: 14px 20px;
+      padding: 12px 18px;
       border-radius: 100px;
       color: #ccc;
       transition: 0.2s;
@@ -324,7 +302,6 @@
     }
 
     .contact h2 {
-      max-width: 850px;
       margin: 0 auto 30px;
     }
 
@@ -332,6 +309,8 @@
       color: var(--muted);
       margin-bottom: 30px;
     }
+
+    /* FOOTER */
 
     footer {
       border-top: 1px solid var(--border);
@@ -342,7 +321,10 @@
       justify-content: space-between;
     }
 
+    /* MOBILE */
+
     @media (max-width: 700px) {
+
       nav ul {
         display: none;
       }
@@ -355,7 +337,10 @@
         letter-spacing: -3px;
       }
 
-      .about-grid,
+      h2 {
+        white-space: normal;
+      }
+
       .projects {
         grid-template-columns: 1fr;
       }
@@ -396,19 +381,21 @@
 
       <div class="tag">FIRST-YEAR STUDENT</div>
 
-<h1>
-  I BUILD<br>
-  <span>THINGS.</span>
-</h1>
+      <h1>
+        I BUILD<br>
+        <span>THINGS.</span>
+      </h1>
 
-<p class="hero-description">
-  我是林綺洛，正在探索設計、科技與創意。
-  喜歡把想法變成真正的作品。
-</p>
+      <p class="hero-description">
+        我是林綺洛，正在探索設計、科技與創意。
+        喜歡把想法變成真正的作品。
+      </p>
 
-<div class="buttons">
-  <a class="btn primary" href="#projects">查看作品 →</a>
-</div>
+      <div class="buttons">
+        <a class="btn primary" href="#projects">
+          查看作品 →
+        </a>
+      </div>
 
     </div>
 
@@ -428,41 +415,18 @@
       <div class="about-text">
 
         <p>
-          嗨，我是林綺洛，就讀於台北市立大學 學習與媒材設計學系。
+          嗨，我是林綺洛，就讀於台北市立大學
+          學習與媒材設計學系。
         </p>
 
         <p>
           我目前正在學習網頁開發、UI/UX 設計與程式設計，
-          同時也喜歡攝影、影像、音樂、AI 或其他你真正感興趣的事情。
+          同時也喜歡攝影、影像、音樂與 AI。
         </p>
 
         <p>
-          這個網站記錄我從大一到大四的學習歷程。
+          這個網站記錄我從大一開始的學習歷程與作品。
         </p>
-
-      </div>
-
-      <div class="stats">
-
-        <div class="stat">
-          <div class="stat-number">01</div>
-          <div class="stat-name">Year Student</div>
-        </div>
-
-        <div class="stat">
-          <div class="stat-number">∞</div>
-          <div class="stat-name">Things To Learn</div>
-        </div>
-
-        <div class="stat">
-          <div class="stat-number">03</div>
-          <div class="stat-name">Current Projects</div>
-        </div>
-
-        <div class="stat">
-          <div class="stat-number">2029</div>
-          <div class="stat-name">Graduation Goal</div>
-        </div>
 
       </div>
 
@@ -490,8 +454,8 @@
           <h3>Project One</h3>
 
           <p>
-            這是一個我正在製作的專案。
-            在這裡介紹問題、我的解決方式，以及最後產生的成果。
+            這是一個我正在製作的專案，
+            在這裡介紹問題、解決方式以及最後的成果。
           </p>
 
           <div class="project-tags">
@@ -537,7 +501,7 @@
 
           <p>
             未來可以放課堂專案、Side Project、
-            比賽作品或任何能證明能力的作品。
+            比賽作品或其他作品。
           </p>
 
           <div class="project-tags">
@@ -547,7 +511,7 @@
 
         </div>
 
-    
+      </article>
 
     </div>
 
@@ -560,7 +524,7 @@
 
     <div class="section-label">03 — Skills</div>
 
-    <h2>What I'm<br>Learning.</h2>
+    <h2>What I'm Learning.</h2>
 
     <div class="skills">
 
@@ -572,8 +536,6 @@
       <div class="skill">Figma</div>
       <div class="skill">Git</div>
       <div class="skill">GitHub</div>
-      <div class="skill">Creative Coding</div>
-      <div class="skill">Problem Solving</div>
 
     </div>
 
@@ -587,12 +549,11 @@
     <div class="section-label">04 — Contact</div>
 
     <h2>
-      Let's build<br>
-      something <span style="color:var(--accent)">great.</span>
+      Let's <span style="color:var(--accent)">Talk.</span>
     </h2>
 
     <p>
-      有任何合作、交流或想了解我的作品，都歡迎聯絡我。
+      想了解我的作品或與我交流，歡迎聯絡我。
     </p>
 
     <div class="buttons" style="justify-content:center;">
@@ -610,21 +571,25 @@
   </section>
 
 
+  <!-- FOOTER -->
+
   <footer>
-    <div>© 2026 YOUR NAME</div>
+    <div>© 2026 林綺洛</div>
     <div>Built with curiosity.</div>
   </footer>
 
 
   <script>
-    // 小小的互動效果：頁面載入時讓內容淡入
+
     document.body.style.opacity = "0";
 
     window.addEventListener("load", () => {
       document.body.style.transition = "opacity 0.8s ease";
       document.body.style.opacity = "1";
     });
+
   </script>
 
 </body>
 </html>
+```
