@@ -44,7 +44,7 @@
       text-decoration: none;
     }
 
-    /* NAV */
+    /* NAVIGATION */
 
     nav {
       position: fixed;
@@ -85,11 +85,10 @@
     /* GENERAL */
 
     section {
-  padding: 120px 8%;
-  max-width: 1300px;
-  margin: auto;
-  text-align: center;
-}
+      padding: 120px 8%;
+      max-width: 1300px;
+      margin: auto;
+      text-align: left;
     }
 
     .section-label {
@@ -100,31 +99,14 @@
       margin-bottom: 15px;
     }
 
-    /* 小標題 */
+    /* SECTION TITLES */
 
     h2 {
-      display: inline-block;
       font-size: clamp(26px, 3vw, 42px);
       letter-spacing: -1px;
       margin-bottom: 40px;
-      color: var(--text);
-      position: relative;
-      z-index: 1;
-    }
-
-    /* 螢光筆畫重點效果 */
-
-    h2::after {
-      content: "";
-      position: absolute;
-      left: -6px;
-      right: -6px;
-      bottom: 4px;
-      height: 10px;
-      background: var(--accent);
-      opacity: 0.75;
-      z-index: -1;
-      transform: rotate(-1deg);
+      color: var(--accent);
+      white-space: nowrap;
     }
 
     /* HERO */
@@ -150,12 +132,10 @@
     }
 
     .hero-content {
-  max-width: 850px;
-  position: relative;
-  z-index: 2;
-  margin: auto;
-  text-align: center;
-}
+      max-width: 850px;
+      position: relative;
+      z-index: 2;
+      text-align: left;
     }
 
     .tag {
@@ -168,13 +148,13 @@
       margin-bottom: 28px;
     }
 
-    /* I BUILD THINGS */
+    /* HERO TITLE */
 
     h1 {
       font-size: clamp(42px, 6vw, 70px);
-      line-height: 0.95;
-      letter-spacing: -5px;
-      margin-bottom: 30px;
+      line-height: 1;
+      letter-spacing: -3px;
+      margin-bottom: 25px;
     }
 
     h1 span {
@@ -188,7 +168,7 @@
       margin-bottom: 40px;
     }
 
-    /* BUTTON */
+    /* BUTTONS */
 
     .buttons {
       display: flex;
@@ -324,12 +304,13 @@
     /* CONTACT */
 
     .contact {
-      text-align: center;
+      text-align: left;
       padding-bottom: 80px;
     }
 
     .contact h2 {
-      margin: 0 auto 30px;
+      max-width: 850px;
+      margin: 0 0 30px;
     }
 
     .contact p {
@@ -390,7 +371,7 @@
   <!-- NAVIGATION -->
 
   <nav>
-    <div class="logo">YOUR<span>.</span>NAME</div>
+    <div class="logo">LIN<span>.</span>QILUO</div>
 
     <ul>
       <li><a href="#about">About</a></li>
@@ -576,15 +557,13 @@
 
     <div class="section-label">04 — Contact</div>
 
-    <h2>
-      Let's <span style="color:var(--accent)">Talk.</span>
-    </h2>
+    <h2>Let's Talk.</h2>
 
     <p>
       想了解我的作品或與我交流，歡迎聯絡我。
     </p>
 
-    <div class="buttons" style="justify-content:center;">
+    <div class="buttons">
 
       <a class="btn primary" href="mailto:your.email@example.com">
         Email Me →
@@ -598,6 +577,8 @@
 
   </section>
 
+
+  <!-- FOOTER -->
 
   <footer>
     <div>© 2026 林綺洛</div>
