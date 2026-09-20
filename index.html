@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
@@ -12,7 +13,7 @@
       --card: #141414;
       --text: #f5f5f5;
       --muted: #999;
-      --accent: #b7ff3c;
+      --accent: #FAF29D;
       --border: #292929;
     }
 
@@ -116,7 +117,7 @@
     .tag {
       display: inline-block;
       color: var(--accent);
-      border: 1px solid rgba(183,255,60,0.3);
+      border: 1px solid rgba(250,242,157,0.3);
       padding: 7px 14px;
       border-radius: 100px;
       font-size: 13px;
@@ -153,6 +154,7 @@
       border-radius: 100px;
       font-size: 14px;
       transition: 0.2s;
+      cursor: pointer;
     }
 
     .btn.primary {
@@ -294,6 +296,36 @@
       color: #bbb;
     }
 
+    /* 新增：數位科技概論卡片 */
+
+    .digital-card {
+      cursor: pointer;
+    }
+
+    .digital-card .project-image {
+      background:
+        linear-gradient(135deg, #222, #101010);
+    }
+
+    .digital-icon {
+      font-family: monospace;
+      font-size: 70px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .project-view {
+      margin-top: 20px;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+      transition: 0.2s;
+    }
+
+    .digital-card:hover .project-view {
+      transform: translateX(5px);
+    }
+
     /* SKILLS */
 
     .skills {
@@ -341,7 +373,221 @@
       justify-content: space-between;
     }
 
+
+    /* ========================================
+       數位科技概論「詳細頁面」
+       ======================================== */
+
+    .detail-page {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: var(--bg);
+      overflow-y: auto;
+    }
+
+    .detail-page.active {
+      display: block;
+    }
+
+    .detail-nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      padding: 20px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(10, 10, 10, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .detail-back {
+      color: var(--muted);
+      font-size: 14px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .detail-back:hover {
+      color: var(--accent);
+    }
+
+    .detail-content {
+      max-width: 1200px;
+      margin: auto;
+      padding: 100px 8%;
+    }
+
+    .detail-hero {
+      margin-bottom: 100px;
+    }
+
+    .detail-tag {
+      display: inline-block;
+      color: var(--accent);
+      border: 1px solid rgba(250,242,157,0.3);
+      padding: 7px 14px;
+      border-radius: 100px;
+      font-size: 13px;
+      margin-bottom: 25px;
+    }
+
+    .detail-title {
+      font-size: clamp(50px, 8vw, 100px);
+      line-height: 0.95;
+      letter-spacing: -5px;
+      margin-bottom: 30px;
+    }
+
+    .detail-title span {
+      color: var(--accent);
+    }
+
+    .detail-intro {
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 750px;
+    }
+
+    .detail-section {
+      margin-bottom: 90px;
+    }
+
+    .detail-section-label {
+      color: var(--accent);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+    }
+
+    .detail-section h2 {
+      font-size: clamp(35px, 5vw, 60px);
+      letter-spacing: -3px;
+      margin-bottom: 35px;
+    }
+
+    .detail-text {
+      color: var(--muted);
+      font-size: 17px;
+      max-width: 850px;
+    }
+
+    .detail-text p {
+      margin-bottom: 20px;
+    }
+
+    /* 學習內容卡片 */
+
+    .learning-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .learning-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+      transition: 0.25s;
+    }
+
+    .learning-card:hover {
+      transform: translateY(-5px);
+      border-color: #444;
+    }
+
+    .learning-number {
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+
+    .learning-card h3 {
+      font-size: 23px;
+      margin-bottom: 10px;
+    }
+
+    .learning-card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    /* 技能 */
+
+    .detail-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .detail-skill {
+      border: 1px solid var(--border);
+      padding: 11px 17px;
+      border-radius: 100px;
+      color: #ccc;
+      font-size: 14px;
+    }
+
+    /* 課程資訊 */
+
+    .course-info {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .course-info-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 23px;
+    }
+
+    .course-info-label {
+      color: #777;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 7px;
+    }
+
+    .course-info-value {
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    /* 心得 */
+
+    .reflection {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 35px;
+    }
+
+    .reflection p {
+      color: var(--muted);
+      font-size: 17px;
+      max-width: 850px;
+      margin-bottom: 18px;
+    }
+
+    .reflection p:last-child {
+      margin-bottom: 0;
+    }
+
+
+    /* MOBILE */
+
     @media (max-width: 700px) {
+
       nav ul {
         display: none;
       }
@@ -367,16 +613,55 @@
         flex-direction: column;
         gap: 10px;
       }
+
+      /* 詳細頁手機版 */
+
+      .detail-content {
+        padding: 70px 6%;
+      }
+
+      .detail-title {
+        letter-spacing: -3px;
+      }
+
+      .learning-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .course-info {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .detail-intro {
+        font-size: 16px;
+      }
+
     }
+
+    @media (max-width: 450px) {
+
+      .course-info {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
   </style>
 </head>
 
+
 <body>
 
-  <!-- NAVIGATION -->
 
-  <nav>
-    <div class="logo">YOUR<span>.</span>NAME</div>
+  <!-- ========================================
+       原本的 NAVIGATION
+       ======================================== -->
+
+  <nav id="mainNav">
+
+    <div class="logo">
+      YOUR<span>.</span>NAME
+    </div>
 
     <ul>
       <li><a href="#about">About</a></li>
@@ -384,16 +669,21 @@
       <li><a href="#skills">Skills</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+
   </nav>
 
 
-  <!-- HERO -->
+  <!-- ========================================
+       HERO
+       ======================================== -->
 
-  <section class="hero">
+  <section class="hero" id="home">
 
     <div class="hero-content">
 
-      <div class="tag">FIRST-YEAR STUDENT · CREATIVE DEVELOPER</div>
+      <div class="tag">
+        FIRST-YEAR STUDENT · CREATIVE DEVELOPER
+      </div>
 
       <h1>
         I BUILD<br>
@@ -406,8 +696,15 @@
       </p>
 
       <div class="buttons">
-        <a class="btn primary" href="#projects">View My Work →</a>
-        <a class="btn" href="#contact">Get In Touch</a>
+
+        <a class="btn primary" href="#projects">
+          View My Work →
+        </a>
+
+        <a class="btn" href="#contact">
+          Get In Touch
+        </a>
+
       </div>
 
     </div>
@@ -415,13 +712,21 @@
   </section>
 
 
-  <!-- ABOUT -->
+  <!-- ========================================
+       ABOUT
+       ======================================== -->
 
   <section id="about">
 
-    <div class="section-label">01 — About</div>
+    <div class="section-label">
+      01 — About
+    </div>
 
-    <h2>Curious.<br>Creative.<br>Always Learning.</h2>
+    <h2>
+      Curious.<br>
+      Creative.<br>
+      Always Learning.
+    </h2>
 
     <div class="about-grid">
 
@@ -443,26 +748,58 @@
 
       </div>
 
+
       <div class="stats">
 
         <div class="stat">
-          <div class="stat-number">01</div>
-          <div class="stat-name">Year Student</div>
+
+          <div class="stat-number">
+            01
+          </div>
+
+          <div class="stat-name">
+            Year Student
+          </div>
+
         </div>
 
-        <div class="stat">
-          <div class="stat-number">∞</div>
-          <div class="stat-name">Things To Learn</div>
-        </div>
 
         <div class="stat">
-          <div class="stat-number">03</div>
-          <div class="stat-name">Current Projects</div>
+
+          <div class="stat-number">
+            ∞
+          </div>
+
+          <div class="stat-name">
+            Things To Learn
+          </div>
+
         </div>
 
+
         <div class="stat">
-          <div class="stat-number">2029</div>
-          <div class="stat-name">Graduation Goal</div>
+
+          <div class="stat-number">
+            03
+          </div>
+
+          <div class="stat-name">
+            Current Projects
+          </div>
+
+        </div>
+
+
+        <div class="stat">
+
+          <div class="stat-number">
+            2029
+          </div>
+
+          <div class="stat-name">
+            Graduation Goal
+          </div>
+
         </div>
 
       </div>
@@ -472,33 +809,65 @@
   </section>
 
 
-  <!-- PROJECTS -->
+  <!-- ========================================
+       PROJECTS
+       ======================================== -->
 
   <section id="projects">
 
-    <div class="section-label">02 — Selected Work</div>
+    <div class="section-label">
+      02 — Selected Work
+    </div>
 
-    <h2>Things I've<br>Made.</h2>
+    <h2>
+      Things I've<br>
+      Made.
+    </h2>
+
 
     <div class="projects">
 
-      <article class="project">
 
-        <div class="project-image">✦</div>
+      <!-- ★ 新增的數位科技概論卡片 ★ -->
+
+      <article
+        class="project digital-card"
+        onclick="openDigitalTech()"
+      >
+
+        <div class="project-image">
+
+          <div class="digital-icon">
+            &lt;/&gt;
+          </div>
+
+        </div>
+
 
         <div class="project-info">
 
-          <h3>Project One</h3>
+          <h3>
+            數位科技概論
+          </h3>
 
           <p>
-            這是一個我正在製作的專案。
-            在這裡介紹問題、我的解決方式，以及最後產生的成果。
+            從 HTML 與 CSS 開始學習網頁設計，
+            練習網站結構、版面配置、卡片設計與 RWD，
+            並將課堂所學實際運用在自己的作品集網站。
           </p>
 
+
           <div class="project-tags">
-            <span>UI/UX</span>
-            <span>Web</span>
-            <span>Design</span>
+
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>RWD</span>
+
+          </div>
+
+
+          <div class="project-view">
+            View Project →
           </div>
 
         </div>
@@ -506,21 +875,29 @@
       </article>
 
 
+      <!-- 原本 Project Two -->
+
       <article class="project">
 
-        <div class="project-image">◈</div>
+        <div class="project-image">
+          ◈
+        </div>
 
         <div class="project-info">
 
-          <h3>Project Two</h3>
+          <h3>
+            Project Two
+          </h3>
 
           <p>
             一個用來展示我的創意、設計思考或程式能力的作品。
           </p>
 
           <div class="project-tags">
+
             <span>JavaScript</span>
             <span>Creative</span>
+
           </div>
 
         </div>
@@ -528,13 +905,19 @@
       </article>
 
 
+      <!-- 原本 Project Three -->
+
       <article class="project">
 
-        <div class="project-image">●</div>
+        <div class="project-image">
+          ●
+        </div>
 
         <div class="project-info">
 
-          <h3>Project Three</h3>
+          <h3>
+            Project Three
+          </h3>
 
           <p>
             未來可以放課堂專案、Side Project、
@@ -542,8 +925,10 @@
           </p>
 
           <div class="project-tags">
+
             <span>Research</span>
             <span>Development</span>
+
           </div>
 
         </div>
@@ -551,80 +936,145 @@
       </article>
 
 
+      <!-- 原本 Coming Soon -->
+
       <article class="project">
 
-        <div class="project-image">△</div>
+        <div class="project-image">
+          △
+        </div>
 
         <div class="project-info">
 
-          <h3>Coming Soon</h3>
+          <h3>
+            Coming Soon
+          </h3>
 
           <p>
             This space is waiting for my next idea.
           </p>
 
           <div class="project-tags">
+
             <span>Future</span>
             <span>Experiment</span>
+
           </div>
 
         </div>
 
       </article>
 
+
     </div>
 
   </section>
 
 
-  <!-- SKILLS -->
+  <!-- ========================================
+       SKILLS
+       ======================================== -->
 
   <section id="skills">
 
-    <div class="section-label">03 — Skills</div>
+    <div class="section-label">
+      03 — Skills
+    </div>
 
-    <h2>What I'm<br>Learning.</h2>
+    <h2>
+      What I'm<br>
+      Learning.
+    </h2>
+
 
     <div class="skills">
 
-      <div class="skill">HTML</div>
-      <div class="skill">CSS</div>
-      <div class="skill">JavaScript</div>
-      <div class="skill">Python</div>
-      <div class="skill">UI/UX</div>
-      <div class="skill">Figma</div>
-      <div class="skill">Git</div>
-      <div class="skill">GitHub</div>
-      <div class="skill">Creative Coding</div>
-      <div class="skill">Problem Solving</div>
+      <div class="skill">
+        HTML
+      </div>
+
+      <div class="skill">
+        CSS
+      </div>
+
+      <div class="skill">
+        JavaScript
+      </div>
+
+      <div class="skill">
+        Python
+      </div>
+
+      <div class="skill">
+        UI/UX
+      </div>
+
+      <div class="skill">
+        Figma
+      </div>
+
+      <div class="skill">
+        Git
+      </div>
+
+      <div class="skill">
+        GitHub
+      </div>
+
+      <div class="skill">
+        Creative Coding
+      </div>
+
+      <div class="skill">
+        Problem Solving
+      </div>
 
     </div>
 
   </section>
 
 
-  <!-- CONTACT -->
+  <!-- ========================================
+       CONTACT
+       ======================================== -->
 
   <section id="contact" class="contact">
 
-    <div class="section-label">04 — Contact</div>
+    <div class="section-label">
+      04 — Contact
+    </div>
 
     <h2>
       Let's build<br>
-      something <span style="color:var(--accent)">great.</span>
+      something
+      <span style="color:var(--accent)">
+        great.
+      </span>
     </h2>
 
     <p>
       有任何合作、交流或想了解我的作品，都歡迎聯絡我。
     </p>
 
-    <div class="buttons" style="justify-content:center;">
 
-      <a class="btn primary" href="mailto:your.email@example.com">
+    <div
+      class="buttons"
+      style="justify-content:center;"
+    >
+
+      <a
+        class="btn primary"
+        href="mailto:your.email@example.com"
+      >
         Email Me →
       </a>
 
-      <a class="btn" href="https://github.com/" target="_blank">
+
+      <a
+        class="btn"
+        href="https://github.com/"
+        target="_blank"
+      >
         GitHub
       </a>
 
@@ -633,21 +1083,489 @@
   </section>
 
 
+  <!-- ========================================
+       FOOTER
+       ======================================== -->
+
   <footer>
-    <div>© 2026 YOUR NAME</div>
-    <div>Built with curiosity.</div>
+
+    <div>
+      © 2026 YOUR NAME
+    </div>
+
+    <div>
+      Built with curiosity.
+    </div>
+
   </footer>
 
 
+
+  <!-- ========================================
+       ★ 數位科技概論詳細頁面 ★
+       ======================================== -->
+
+  <div
+    id="digitalTechPage"
+    class="detail-page"
+  >
+
+
+    <!-- 詳細頁 NAV -->
+
+    <div class="detail-nav">
+
+      <div class="logo">
+        LQ<span>.</span>
+      </div>
+
+      <div
+        class="detail-back"
+        onclick="closeDigitalTech()"
+      >
+        ← Back to Portfolio
+      </div>
+
+    </div>
+
+
+    <!-- 詳細頁內容 -->
+
+    <div class="detail-content">
+
+
+      <!-- 詳細頁 HERO -->
+
+      <div class="detail-hero">
+
+        <div class="detail-tag">
+          COURSE PROJECT · 2026
+        </div>
+
+        <h1 class="detail-title">
+          DIGITAL<br>
+          <span>TECH.</span>
+        </h1>
+
+        <p class="detail-intro">
+          數位科技概論是我大一階段開始接觸網頁設計與前端開發的課程。
+          從 HTML 與 CSS 開始，逐步學習網頁結構、視覺設計、
+          版面配置與響應式網頁設計，並將課堂所學實際運用在自己的作品集網站。
+        </p>
+
+      </div>
+
+
+      <!-- 課程資訊 -->
+
+      <div class="detail-section">
+
+        <div class="detail-section-label">
+          01 — Course Information
+        </div>
+
+        <h2>
+          Course Info.
+        </h2>
+
+
+        <div class="course-info">
+
+
+          <div class="course-info-item">
+
+            <div class="course-info-label">
+              Course
+            </div>
+
+            <div class="course-info-value">
+              數位科技概論
+            </div>
+
+          </div>
+
+
+          <div class="course-info-item">
+
+            <div class="course-info-label">
+              Department
+            </div>
+
+            <div class="course-info-value">
+              學習與媒材設計學系
+            </div>
+
+          </div>
+
+
+          <div class="course-info-item">
+
+            <div class="course-info-label">
+              Year
+            </div>
+
+            <div class="course-info-value">
+              大一上
+            </div>
+
+          </div>
+
+
+          <div class="course-info-item">
+
+            <div class="course-info-label">
+              Focus
+            </div>
+
+            <div class="course-info-value">
+              HTML · CSS · Web
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+      <!-- 課程介紹 -->
+
+      <div class="detail-section">
+
+        <div class="detail-section-label">
+          02 — Overview
+        </div>
+
+        <h2>
+          From Learning<br>
+          To Making.
+        </h2>
+
+
+        <div class="detail-text">
+
+          <p>
+            這門課讓我開始接觸網頁製作的基本概念，
+            從 HTML 的結構開始，逐步理解網頁內容如何被組織，
+            再利用 CSS 調整網站的視覺呈現。
+          </p>
+
+          <p>
+            在課程練習中，我也開始接觸網頁版面的配置，
+            以及如何利用不同的 CSS 技術讓內容排列得更加清楚。
+          </p>
+
+          <p>
+            透過這些練習，我希望可以慢慢建立自己的網頁設計能力，
+            並把課堂上的學習成果整理到自己的作品集網站中。
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- 學習內容 -->
+
+      <div class="detail-section">
+
+        <div class="detail-section-label">
+          03 — What I Learned
+        </div>
+
+        <h2>
+          What I've<br>
+          Learned.
+        </h2>
+
+
+        <div class="learning-grid">
+
+
+          <div class="learning-card">
+
+            <div class="learning-number">
+              01
+            </div>
+
+            <h3>
+              HTML
+            </h3>
+
+            <p>
+              學習使用 HTML 建立網頁的基本結構，
+              理解標題、段落、連結與其他內容元素
+              在網頁中的作用。
+            </p>
+
+          </div>
+
+
+          <div class="learning-card">
+
+            <div class="learning-number">
+              02
+            </div>
+
+            <h3>
+              CSS
+            </h3>
+
+            <p>
+              使用 CSS 調整文字、顏色、間距、
+              邊框與其他視覺效果，
+              讓網頁呈現完整的設計。
+            </p>
+
+          </div>
+
+
+          <div class="learning-card">
+
+            <div class="learning-number">
+              03
+            </div>
+
+            <h3>
+              Layout
+            </h3>
+
+            <p>
+              練習利用 CSS 進行網頁版面配置，
+              讓不同的內容區塊能夠有條理地排列。
+            </p>
+
+          </div>
+
+
+          <div class="learning-card">
+
+            <div class="learning-number">
+              04
+            </div>
+
+            <h3>
+              Cards
+            </h3>
+
+            <p>
+              學習利用卡片的方式整理不同資訊，
+              並透過間距、邊框與版面配置建立
+              清楚的資訊層級。
+            </p>
+
+          </div>
+
+
+          <div class="learning-card">
+
+            <div class="learning-number">
+              05
+            </div>
+
+            <h3>
+              RWD
+            </h3>
+
+            <p>
+              開始理解響應式網頁設計，
+              讓網站在不同螢幕尺寸下都能維持良好的閱讀方式。
+            </p>
+
+          </div>
+
+
+          <div class="learning-card">
+
+            <div class="learning-number">
+              06
+            </div>
+
+            <h3>
+              Accessibility
+            </h3>
+
+            <p>
+              開始注意網站的可使用性，
+              思考如何讓不同使用者都能更容易理解與操作網站。
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+      <!-- 技術 -->
+
+      <div class="detail-section">
+
+        <div class="detail-section-label">
+          04 — Technologies
+        </div>
+
+        <h2>
+          Tools &<br>
+          Technologies.
+        </h2>
+
+
+        <div class="detail-skills">
+
+          <div class="detail-skill">
+            HTML
+          </div>
+
+          <div class="detail-skill">
+            CSS
+          </div>
+
+          <div class="detail-skill">
+            Flexbox
+          </div>
+
+          <div class="detail-skill">
+            Grid
+          </div>
+
+          <div class="detail-skill">
+            Responsive Web Design
+          </div>
+
+          <div class="detail-skill">
+            Accessibility
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- 心得 -->
+
+      <div class="detail-section">
+
+        <div class="detail-section-label">
+          05 — Reflection
+        </div>
+
+        <h2>
+          What I Think.
+        </h2>
+
+
+        <div class="reflection">
+
+          <p>
+            一開始接觸 HTML 與 CSS 時，我覺得程式碼很陌生，
+            也不太容易想像每一行程式最後會變成什麼樣子。
+            但在實際修改與練習之後，我開始慢慢理解
+            程式碼和網頁畫面之間的關係。
+          </p>
+
+          <p>
+            對我來說，目前最大的收穫不只是記住程式碼，
+            而是開始知道如何透過不同的 HTML 與 CSS
+            元素去完成自己想要的網頁效果。
+            未來也希望能將這些基礎能力運用在更多作品上。
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- 回首頁 -->
+
+      <div
+        class="buttons"
+        style="justify-content:center; padding-bottom:50px;"
+      >
+
+        <button
+          class="btn primary"
+          onclick="closeDigitalTech()"
+        >
+          ← Back to Portfolio
+        </button>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+
+  <!-- ========================================
+       JAVASCRIPT
+       ======================================== -->
+
   <script>
-    // 小小的互動效果：頁面載入時讓內容淡入
+
+    /* 原本的頁面淡入效果 */
+
     document.body.style.opacity = "0";
 
     window.addEventListener("load", () => {
-      document.body.style.transition = "opacity 0.8s ease";
+
+      document.body.style.transition =
+        "opacity 0.8s ease";
+
       document.body.style.opacity = "1";
+
     });
+
+
+    /* ========================================
+       數位科技概論詳細頁面
+       ======================================== */
+
+    function openDigitalTech() {
+
+      const page =
+        document.getElementById("digitalTechPage");
+
+      page.classList.add("active");
+
+      document.body.style.overflow = "hidden";
+
+      page.scrollTop = 0;
+
+    }
+
+
+    function closeDigitalTech() {
+
+      const page =
+        document.getElementById("digitalTechPage");
+
+      page.classList.remove("active");
+
+      document.body.style.overflow = "";
+
+    }
+
+
+    /* ESC 可以關閉詳細頁 */
+
+    document.addEventListener("keydown", function(event) {
+
+      if (event.key === "Escape") {
+
+        closeDigitalTech();
+
+      }
+
+    });
+
   </script>
+
 
 </body>
 </html>
+```
