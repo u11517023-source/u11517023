@@ -217,11 +217,15 @@
       border-radius: 20px;
       overflow: hidden;
       transition: 0.3s;
+    }
+
+    /* 可點擊卡片樣式 */
+    .project.clickable {
       cursor: pointer;
     }
 
-    .project:hover {
-      border-color: #444;
+    .project.clickable:hover {
+      border-color: var(--accent);
       transform: translateY(-4px);
     }
 
@@ -494,7 +498,7 @@
 
     <div class="projects">
       <!-- 數位科技概論（新增卡片） -->
-      <article class="project" onclick="document.getElementById('tech-modal').showModal()">
+      <article class="project clickable" id="open-tech-modal">
         <div class="project-image">
           ⚡
         </div>
@@ -544,7 +548,7 @@
         <h3>數位科技概論 · 課程活動</h3>
         <p>點擊下方卡片即可跳轉至各項成果網站</p>
       </div>
-      <button class="close-btn" onclick="document.getElementById('tech-modal').close()">✕</button>
+      <button class="close-btn" id="close-tech-modal">✕</button>
     </div>
 
     <div class="activities-grid">
@@ -617,6 +621,36 @@
       數位科技概論 課程作品
     </div>
   </footer>
+
+  <!-- 控制彈窗的 JavaScript -->
+  <script>
+    const modal = document.getElementById('tech-modal');
+    const openBtn = document.getElementById('open-tech-modal');
+    const closeBtn = document.getElementById('close-tech-modal');
+
+    // 點擊卡片開啟 Modal
+    openBtn.addEventListener('click', () => {
+      modal.showModal();
+    });
+
+    // 點擊關閉按鈕
+    closeBtn.addEventListener('click', () => {
+      modal.close();
+    });
+
+    // 點擊 Modal 外部背景也可關閉
+    modal.addEventListener('click', (e) => {
+      const dialogBounds = modal.getBoundingClientRect();
+      if (
+        e.clientX < dialogBounds.left ||
+        e.clientX > dialogBounds.right ||
+        e.clientY < dialogBounds.top ||
+        e.clientY > dialogBounds.bottom
+      ) {
+        modal.close();
+      }
+    });
+  </script>
 
 </body>
 </html>
