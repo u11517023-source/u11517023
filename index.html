@@ -217,15 +217,11 @@
       border-radius: 20px;
       overflow: hidden;
       transition: 0.3s;
-    }
-
-    /* 可點擊卡片樣式 */
-    .project.clickable {
       cursor: pointer;
     }
 
-    .project.clickable:hover {
-      border-color: var(--accent);
+    .project:hover {
+      border-color: #444;
       transform: translateY(-4px);
     }
 
@@ -498,7 +494,7 @@
 
     <div class="projects">
       <!-- 數位科技概論（新增卡片） -->
-      <article class="project clickable" id="open-tech-modal">
+      <article class="project" onclick="document.getElementById('tech-modal').showModal()">
         <div class="project-image">
           ⚡
         </div>
@@ -548,33 +544,33 @@
         <h3>數位科技概論 · 課程活動</h3>
         <p>點擊下方卡片即可跳轉至各項成果網站</p>
       </div>
-      <button class="close-btn" id="close-tech-modal">✕</button>
+      <button class="close-btn" onclick="document.getElementById('tech-modal').close()">✕</button>
     </div>
 
     <div class="activities-grid">
-      <!-- 活動一：補回 .html -->
-      <a href="01-html-text-u11517023.html" target="_blank" rel="noopener noreferrer" class="activity-card">
+      <!-- 活動一 -->
+      <a href="https://your-activity-1-link.com" target="_blank" rel="noopener noreferrer" class="activity-card">
         <span class="activity-tag">ACTIVITY 01</span>
         <h4>課程活動一</h4>
         <p>點擊前往檢視成果網址 →</p>
       </a>
 
-      <!-- 活動二：補回 .html (若此檔案有其他完整名稱可自行修改) -->
-      <a href="02-media.html" target="_blank" rel="noopener noreferrer" class="activity-card">
+      <!-- 活動二 -->
+      <a href="https://your-activity-2-link.com" target="_blank" rel="noopener noreferrer" class="activity-card">
         <span class="activity-tag">ACTIVITY 02</span>
         <h4>課程活動二</h4>
         <p>點擊前往檢視成果網址 →</p>
       </a>
 
-      <!-- 活動三：補回 .html -->
-      <a href="03-html-plan-11517023.html" target="_blank" rel="noopener noreferrer" class="activity-card">
+      <!-- 活動三 -->
+      <a href="https://your-activity-3-link.com" target="_blank" rel="noopener noreferrer" class="activity-card">
         <span class="activity-tag">ACTIVITY 03</span>
         <h4>課程活動三</h4>
         <p>點擊前往檢視成果網址 →</p>
       </a>
 
-      <!-- 活動四：補回 .html -->
-      <a href="04-html-form-u11517023.html" target="_blank" rel="noopener noreferrer" class="activity-card">
+      <!-- 活動四 -->
+      <a href="https://your-activity-4-link.com" target="_blank" rel="noopener noreferrer" class="activity-card">
         <span class="activity-tag">ACTIVITY 04</span>
         <h4>課程活動四</h4>
         <p>點擊前往檢視成果網址 →</p>
@@ -621,36 +617,6 @@
       數位科技概論 課程作品
     </div>
   </footer>
-
-  <!-- 控制彈窗的 JavaScript -->
-  <script>
-    const modal = document.getElementById('tech-modal');
-    const openBtn = document.getElementById('open-tech-modal');
-    const closeBtn = document.getElementById('close-tech-modal');
-
-    // 點擊卡片開啟 Modal
-    openBtn.addEventListener('click', () => {
-      modal.showModal();
-    });
-
-    // 點擊關閉按鈕
-    closeBtn.addEventListener('click', () => {
-      modal.close();
-    });
-
-    // 點擊 Modal 外部背景也可關閉
-    modal.addEventListener('click', (e) => {
-      const dialogBounds = modal.getBoundingClientRect();
-      if (
-        e.clientX < dialogBounds.left ||
-        e.clientX > dialogBounds.right ||
-        e.clientY < dialogBounds.top ||
-        e.clientY > dialogBounds.bottom
-      ) {
-        modal.close();
-      }
-    });
-  </script>
 
 </body>
 </html>
