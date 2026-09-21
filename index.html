@@ -148,6 +148,7 @@
       border-radius: 100px;
       font-size: 14px;
       transition: 0.2s;
+      cursor: pointer;
     }
 
     .btn.primary {
@@ -206,7 +207,7 @@
     /* 作品區 */
     .projects {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
 
@@ -216,10 +217,12 @@
       border-radius: 20px;
       overflow: hidden;
       transition: 0.3s;
+      cursor: pointer;
     }
 
     .project:hover {
       border-color: #444;
+      transform: translateY(-4px);
     }
 
     .project-image {
@@ -254,6 +257,100 @@
       border-radius: 100px;
       font-size: 12px;
       color: var(--accent);
+    }
+
+    /* 彈出層 Modal 樣式 */
+    dialog.modal {
+      margin: auto;
+      background: var(--card);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 40px;
+      max-width: 900px;
+      width: 90%;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    }
+
+    dialog.modal::backdrop {
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(8px);
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 30px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 20px;
+    }
+
+    .modal-header h3 {
+      font-size: 28px;
+      color: var(--text);
+    }
+
+    .modal-header p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 4px;
+    }
+
+    .close-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 18px;
+      transition: 0.2s;
+    }
+
+    .close-btn:hover {
+      background: var(--accent);
+      color: #000;
+      border-color: var(--accent);
+    }
+
+    .activities-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .activity-card {
+      background: #1a1a1a;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .activity-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    .activity-tag {
+      font-size: 12px;
+      color: var(--accent);
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .activity-card h4 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .activity-card p {
+      font-size: 14px;
+      color: var(--muted);
     }
 
     /* 學習目標 */
@@ -292,6 +389,12 @@
     }
 
     /* RWD 手機版 */
+    @media (max-width: 900px) {
+      .projects {
+        grid-template-columns: 1fr;
+      }
+    }
+
     @media (max-width: 700px) {
       nav ul {
         display: none;
@@ -301,7 +404,7 @@
         padding: 90px 6%;
       }
 
-      .about-grid, .projects, .goals-grid {
+      .about-grid, .goals-grid, .activities-grid {
         grid-template-columns: 1fr;
       }
 
@@ -327,7 +430,7 @@
     </ul>
   </nav>
 
-  <!-- HERO 主頁簡介 -->
+  <!-- HERO 首頁區塊 -->
   <section class="hero" id="home">
     <div class="hero-content">
       <div class="tag">
@@ -379,7 +482,7 @@
     </div>
   </section>
 
-  <!-- PROJECTS 作品區（期中與期末作品） -->
+  <!-- PROJECTS 作品區 -->
   <section id="projects">
     <div class="section-label">
       02 — Works
@@ -390,6 +493,20 @@
     </h2>
 
     <div class="projects">
+      <!-- 數位科技概論（新增卡片） -->
+      <article class="project" onclick="document.getElementById('tech-modal').showModal()">
+        <div class="project-image">
+          ⚡
+        </div>
+        <div class="project-info">
+          <h3>數位科技概論</h3>
+          <p>
+            展示課程期間製作的 4 項主要活動成果與實作練習，點擊檢視詳細項目。
+          </p>
+          <span class="project-status">4 項活動成果 →</span>
+        </div>
+      </article>
+
       <!-- 期中作品 -->
       <article class="project">
         <div class="project-image">
@@ -419,6 +536,47 @@
       </article>
     </div>
   </section>
+
+  <!-- 數位科技概論 彈出頁面 (Modal) -->
+  <dialog id="tech-modal" class="modal">
+    <div class="modal-header">
+      <div>
+        <h3>數位科技概論 · 課程活動</h3>
+        <p>點擊下方卡片即可跳轉至各項成果網站</p>
+      </div>
+      <button class="close-btn" onclick="document.getElementById('tech-modal').close()">✕</button>
+    </div>
+
+    <div class="activities-grid">
+      <!-- 活動一 -->
+      <a href="https://your-activity-1-link.com" target="_blank" rel="noopener noreferrer" class="activity-card">
+        <span class="activity-tag">ACTIVITY 01</span>
+        <h4>課程活動一</h4>
+        <p>點擊前往檢視成果網址 →</p>
+      </a>
+
+      <!-- 活動二 -->
+      <a href="https://your-activity-2-link.com" target="_blank" rel="noopener noreferrer" class="activity-card">
+        <span class="activity-tag">ACTIVITY 02</span>
+        <h4>課程活動二</h4>
+        <p>點擊前往檢視成果網址 →</p>
+      </a>
+
+      <!-- 活動三 -->
+      <a href="https://your-activity-3-link.com" target="_blank" rel="noopener noreferrer" class="activity-card">
+        <span class="activity-tag">ACTIVITY 03</span>
+        <h4>課程活動三</h4>
+        <p>點擊前往檢視成果網址 →</p>
+      </a>
+
+      <!-- 活動四 -->
+      <a href="https://your-activity-4-link.com" target="_blank" rel="noopener noreferrer" class="activity-card">
+        <span class="activity-tag">ACTIVITY 04</span>
+        <h4>課程活動四</h4>
+        <p>點擊前往檢視成果網址 →</p>
+      </a>
+    </div>
+  </dialog>
 
   <!-- GOALS 學習目標 -->
   <section id="goals">
